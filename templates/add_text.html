@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask demo</title>
+</head>
+<body>
+<h2>Add data</h2>
+<form method="POST" action="/add_text">
+    <p><textarea name="text_1" rows=2 cols=40 placeholder="text_1"></textarea></p>
+    <p><textarea name="text_2" rows=2 cols=40 placeholder="text_2"></textarea></p>
+    <p><button type="submit">Submit</button></p>
+</form>
+
+<h3>Log</h3>
+{% for text in all_texts %}
+<div>{{ text.now }}:&nbsp{{ text.text_1 }}&nbsp{{ text.text_2 }}&nbsp<b>TAG:&nbsp{{ text.text_tag }}</b></div>
+{% endfor %}
+
+</body>
+</html>
